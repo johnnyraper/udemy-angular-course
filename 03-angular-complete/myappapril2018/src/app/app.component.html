@@ -1,23 +1,75 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 
+<div class="container">
+
+  <input type="text" [(ngModel)]="name">
+  <p>{{ name }}</p>
+
+  <h3>I'm the App component!</h3>
+  
+  <hr>
+
+  <app-servers-group></app-servers-group>
+
+  <app-alert-warning>
+  </app-alert-warning>
+
+  <app-alert-success>
+  </app-alert-success>
+
+  <hr>
+
+  <label>Assignment 2: Username</label>
+
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="username">
+
+  <p>{{ username }}</p>
+
+  <button 
+    class="btn btn-primary"
+    [disabled]="username === ''"
+    (click)="username=''">Reset User</button>
 
 
-<input type="text" [(ngModel)]="name">
-<p>{{ name }}</p>
+  <hr>
+
+  <label>Assignment 3: Display Details</label>
+
+  <br />
+
+  <!-- <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="username"> -->
+
+  <!-- <p>{{ username }}</p> -->
+
+  <!-- <button 
+    class="btn btn-primary" (click)="detailsState = !detailsState">Display Details</button> -->
+
+    <button 
+    class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+    <p *ngIf="!detailsState">Lorem ipsum dolor sit amet</p>
+
+    <p
+      *ngFor="let logItem of log; let i = index"
+      [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+      [ngClass]="{'paragraph-text': i >= 4}">{{ logItem }}</p>
+</div>
 
 
 
 
-<h3>Alright chuck aah'z it gaan?</h3>
-<hr>
-<app-servers-group></app-servers-group>
 
-<app-alert-warning>
-</app-alert-warning>
+<!-- <p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
 
-<app-alert-success>
-</app-alert-success>
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template> -->
 
 
 

@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+.navbar {
+  margin-bottom: 20px;
+  background: #dedede;
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-nav li {
+  display: inline-block;
+  margin: 0 20px;
+}
